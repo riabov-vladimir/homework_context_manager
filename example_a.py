@@ -1,4 +1,4 @@
-def ingredient(ing_line):
+def get_ingredient_dict(ing_line):
 	"""Функция, которая принимает строку с ингридиентами из файла и возвращает словарь"""
 	ing_line = ing_line.split(' | ')
 	dict = {'ingredient_name': ing_line[0], 'quantity': int(ing_line[1]), 'measure': ing_line[2].strip()}
@@ -18,7 +18,7 @@ def txt_to_dict(file_name):
 				temp = line.strip()
 			elif '|' in line:
 				dict.setdefault(temp, [])
-				dict[temp].append(ingredient(line))
+				dict[temp].append(get_ingredient_dict(line))
 	return dict
 
 def get_shop_list_by_dishes(cook_book, dishes=('Фахитос', 'Омлет'), person_count=5):

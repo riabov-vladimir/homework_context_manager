@@ -7,3 +7,4 @@ with Timing_CM():
 	cook_book = txt_to_dict('recipes.txt')
 	print(get_shop_list_by_dishes(cook_book))
 	# time.sleep(5)  # для проверки времени выполнения
+	# 1/0 # для проверки вывода ошибки исполнения
